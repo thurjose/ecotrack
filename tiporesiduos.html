@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tipo de residuos</title>
+</head>
+<body>
+    <h1>Tipo de resíduo</h1>
+    <form id="form-residuo">
+        <h3>Novo tipo de resíduo: </h3>
+        <input type="hidden" id="campo-id-editando">
+        <p>Nome (até 50 caracteres)</p>
+        <input type="text" id="campo-nome" maxlength="50">
+        <p>É reciclável</p>
+        <input type="checkbox" id="campo-reciclavel">
+        <p>É perigoso</p>
+        <input type="checkbox" id="campo-perigoso">
+        <button>Adicionar</button>
+    </form>
+
+    <div id="area-lista"></div>
+
+    <script src="tiporesiduos.js"></script>
+</body>
+</html>
