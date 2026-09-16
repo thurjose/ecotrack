@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Veículos</title>
+</head>
+<body>
+    <h1>Cadastro de veículos</h1>
+    <input type = "text" id = "identificacao" placeholder = "identificação (placa)">
+    <input type = "number" id = "capacidade" placeholder = "capacidade (kg)">
+    <input type = "text" id = "tipo_veiculo" placeholder = "tipo de veículo">
+
+   <select id = "id_organizacao"> 
+        <option value = "1">Cooperativa Central </option>
+        <option value = "2">EcoTrack </option>
+   </select>
+
+   """"""""
+<select id ="situacao_veiculo">
+    <option value ="Disponível"> Disponivel</option>
+    <option value ="Em rota"> Em rota </option>
+    <option value ="Manutencao"> Manutenção</option>
+</select>
+<button type = "button" onclick ="salvar()"> salvar</button>
+
+<div id="lista"></div>
+
+<script src = "veiculos.js"></script>
+ 
+</body>
+</html>
