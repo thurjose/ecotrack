@@ -222,6 +222,12 @@ h1 {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+  border: none;
+}
+
+.list-card th,
+.list-card td {
+  border: none;
 }
 
 .list-card th {

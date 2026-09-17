@@ -115,4 +115,5 @@ function excluir(id){
         localStorage.setItem("listaVeiculo", JSON.stringify(novaLista));
         mostrar();
         }
-    
+
+mostrar();
