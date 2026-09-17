@@ -2,17 +2,24 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Trabalho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="EcoTrack conecta cidadãos, cooperativas e gestão urbana: registro de pontos de descarte irregular, acompanhamento do atendimento e controle da frota de coleta."
+    />
+    <title>EcoTrack — Gestão inteligente de resíduos urbanos</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
     <header class="head">
       <div class="logo">
         <a href="index.html"><img src="image.png" alt="EcoTrack logo" /></a>
         <a href="index.html">EcoTrack</a>
       </div>
-      <nav class="nav">
+      <nav class="nav" aria-label="Módulos">
         <a href="usuario.html">Usuários</a>
         <a href="organizacao.html">Organizações</a>
         <a href="veiculos.html">Veículos</a>
@@ -21,28 +28,290 @@
       </nav>
     </header>
 
-    <section class="intro">
-      <h1>Cada ponto registrado é um passo para a cidade limpa!</h1>
-      <p class="intro-tagline">
-        O EcoTrack conecta cidadãos, empresas de coleta e a gestão urbana em uma única plataforma.
-      </p>
+    <main id="conteudo">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <span class="badge"
+              ><span class="badge__dot" aria-hidden="true"></span> Plataforma de
+              coleta urbana</span
+            >
+            <h1>
+              Cada ponto registrado é um passo para a
+              <span class="hl">cidade limpa</span>.
+            </h1>
+            <p class="lead">
+              O EcoTrack conecta cidadãos, empresas de coleta e a gestão urbana
+              em uma única plataforma — do registro da ocorrência até a
+              confirmação da coleta.
+            </p>
 
-      <div class="intro-cards">
-        <div class="intro-card">
-          <h2>Criação do EcoTrack</h2>
-          <p>Necessidade de uma averiguação na limpeza da cidade.</p>
+            <div class="hero__actions">
+              <a class="btn btn--solid" href="atendimento.html"
+                >Registrar atendimento</a
+              >
+              <a class="btn btn--ghost" href="#modulos">Conhecer os módulos</a>
+            </div>
+
+          </div>
+
+          <!-- Painel com os números reais salvos no navegador -->
+          <aside class="panel" aria-label="Resumo dos seus registros">
+            <div class="panel__head">
+              <span class="panel__title">Resumo da operação</span>
+            </div>
+
+            <div class="panel__grid">
+              <a class="stat" href="usuario.html">
+                <span class="stat__num" data-contador="listaUsuario">0</span>
+                <span class="stat__label">Usuários</span>
+              </a>
+              <a class="stat" href="organizacao.html">
+                <span class="stat__num" data-contador="listaOrganizacao">0</span>
+                <span class="stat__label">Organizações</span>
+              </a>
+              <a class="stat" href="veiculos.html">
+                <span class="stat__num" data-contador="listaVeiculo">0</span>
+                <span class="stat__label">Veículos</span>
+              </a>
+              <a class="stat" href="atendimento.html">
+                <span class="stat__num" data-contador="atendimento">0</span>
+                <span class="stat__label">Atendimentos</span>
+              </a>
+              <a class="stat stat--wide" href="tiporesiduos.html">
+                <span class="stat__num" data-contador="tipo_residuo">0</span>
+                <span class="stat__label">Tipos de resíduo cadastrados</span>
+              </a>
+            </div>
+          </aside>
         </div>
-        <div class="intro-card">
-          <h2>Qual problema o EcoTrack resolve?</h2>
-          <p>Pontos de coleta não vistos pelos órgãos públicos.</p>
+      </section>
+
+      <!-- MÓDULOS -->
+      <section class="section" id="modulos">
+        <header class="section__head">
+          <h2>Tudo o que a operação precisa, em um só lugar</h2>
+          <p>
+            Cada módulo cuida de uma parte do ciclo da coleta e conversa com os
+            demais pelos mesmos cadastros.
+          </p>
+        </header>
+
+        <div class="cards">
+          <a class="card" href="usuario.html">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 19v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1" />
+                <circle cx="9.5" cy="7" r="3.5" />
+                <path d="M17 11h4M19 9v4" />
+              </svg>
+            </span>
+            <h3>Usuários</h3>
+            <p>
+              Cadastro de cidadãos e agentes responsáveis por abrir e acompanhar
+              ocorrências.
+            </p>
+            <span class="card__link">Abrir módulo →</span>
+          </a>
+
+          <a class="card" href="organizacao.html">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18" />
+                <path d="M5 21V6l7-3 7 3v15" />
+                <path d="M9 21v-5h6v5" />
+                <path d="M9 9h.01M15 9h.01M9 12.5h.01M15 12.5h.01" />
+              </svg>
+            </span>
+            <h3>Organizações</h3>
+            <p>
+              Cooperativas, empresas de coleta e órgãos públicos que executam os
+              atendimentos.
+            </p>
+            <span class="card__link">Abrir módulo →</span>
+          </a>
+
+          <a class="card" href="veiculos.html">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 16V7h11v9" />
+                <path d="M13 10h4l4 3.5V16" />
+                <circle cx="7" cy="17.5" r="2" />
+                <circle cx="17" cy="17.5" r="2" />
+              </svg>
+            </span>
+            <h3>Veículos</h3>
+            <p>
+              Frota, capacidade em quilos e situação de cada veículo: disponível,
+              em rota ou em manutenção.
+            </p>
+            <span class="card__link">Abrir módulo →</span>
+          </a>
+
+          <a class="card" href="atendimento.html">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 7 10 17l-5-5" />
+                <path d="M21 12a9 9 0 1 1-4.2-7.6" />
+              </svg>
+            </span>
+            <h3>Atendimento</h3>
+            <p>
+              A linha do tempo da coleta: aceite, início, conclusão e o resultado
+              registrado em campo.
+            </p>
+            <span class="card__link">Abrir módulo →</span>
+          </a>
+
+          <a class="card" href="tiporesiduos.html">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 3 6.5 10.5" />
+                <path d="M13 3h3l4 7" />
+                <path d="M7.5 21 4 14.5h15L15.5 21z" />
+                <circle cx="12" cy="12" r="1.6" />
+              </svg>
+            </span>
+            <h3>Tipo de Resíduo</h3>
+            <p>
+              Classificação do material coletado, com marcação de reciclável e de
+              resíduo perigoso.
+            </p>
+            <span class="card__link">Abrir módulo →</span>
+          </a>
+
+          <div class="card card--cta">
+            <h3>Comece agora</h3>
+            <p>
+              Registre um ponto de descarte irregular, acompanhe o atendimento
+              até a coleta e ajude a manter a cidade mais limpa.
+            </p>
+            <a class="btn btn--solid btn--sm" href="usuario.html"
+              >Criar primeiro cadastro</a
+            >
+          </div>
         </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section class="section section--alt" id="como-funciona">
+        <header class="section__head">
+          <h2>Como funciona</h2>
+          <p>Do registro do problema à confirmação da coleta, em quatro etapas.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">1</span>
+            <h3>Registro</h3>
+            <p>
+              O cidadão aponta o local do descarte irregular e descreve o que
+              encontrou.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <h3>Aceite</h3>
+            <p>
+              Uma organização assume a ocorrência e destina um veículo disponível
+              da frota.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <h3>Coleta</h3>
+            <p>
+              A equipe executa o atendimento e classifica o material recolhido por
+              tipo de resíduo.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step__num">4</span>
+            <h3>Conclusão</h3>
+            <p>
+              O resultado é registrado e o histórico fica disponível para a gestão
+              urbana.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="section split">
+        <div class="split__copy">
+          <h2>Por que o EcoTrack existe</h2>
+          <p class="lead lead--sm">
+            A limpeza urbana falha quando ninguém enxerga o problema inteiro: o
+            morador sabe onde está o lixo, a cooperativa sabe onde está o
+            caminhão, e a prefeitura só descobre depois da reclamação.
+          </p>
+          <ul class="checks">
+            <li>
+              <strong>Pontos invisíveis.</strong> Descartes irregulares que os
+              órgãos públicos não chegam a mapear.
+            </li>
+            <li>
+              <strong>Coleta sem rastro.</strong> Atendimentos sem data de início,
+              conclusão ou resultado registrado.
+            </li>
+            <li>
+              <strong>Frota sem visão.</strong> Veículos parados enquanto outros
+              acumulam rota.
+            </li>
+          </ul>
+        </div>
+
+        <figure class="split__quote">
+          <blockquote>
+            “Averiguar a limpeza da cidade não deveria depender de sorte. Depende
+            de registro.”
+          </blockquote>
+          <figcaption>Princípio de projeto do EcoTrack</figcaption>
+        </figure>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="cta">
+        <h2>Pronto para começar o controle da coleta?</h2>
+        <p>
+          Cadastre as organizações e a frota, e comece a registrar atendimentos
+          hoje mesmo.
+        </p>
+        <div class="cta__actions">
+          <a class="btn btn--light" href="organizacao.html"
+            >Cadastrar organização</a
+          >
+          <a class="btn btn--outline" href="atendimento.html"
+            >Ver atendimentos</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot__inner">
+        <div class="foot__brand">
+          <img src="image.png" alt="" />
+          <div>
+            <strong>EcoTrack</strong>
+            <span>Gestão inteligente de resíduos urbanos</span>
+          </div>
+        </div>
+
+        <nav class="foot__links" aria-label="Rodapé">
+          <a href="usuario.html">Usuários</a>
+          <a href="organizacao.html">Organizações</a>
+          <a href="veiculos.html">Veículos</a>
+          <a href="atendimento.html">Atendimento</a>
+          <a href="tiporesiduos.html">Tipo de Resíduo</a>
+        </nav>
       </div>
-      <div class="intro-cards">
-        <div class="intro-card">
-          <h2>Comece agora</h2>
-          <p>Registre pontos de descarte irregular, acompanhe o atendimento até a coleta e ajude a manter a cidade mais limpa e organizada.</p>
-        </div>
-      </div>
-    </section>
+      <p class="foot__legal">
+        © <span id="ano">2026</span> EcoTrack — projeto acadêmico.
+      </p>
+    </footer>
+
+    <script src="index.js"></script>
   </body>
 </html>
