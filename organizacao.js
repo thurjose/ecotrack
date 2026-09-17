@@ -1,3 +1,5 @@
+let indiceEdicao = -1; 
+
 function salvar(){
     let lista = JSON.parse(localStorage.getItem("listaOrganizacao"));
 
@@ -7,16 +9,52 @@ function salvar(){
 
     let organizacao = {
        nome: document.getElementById("nome").value,
-       tipoOrganizacao: document.getElementById("tipoOrganizacao").value,
+       tipoOrganizacao: document.getElementById("tipo_organizacao").value,
        telefone: document.getElementById("telefone").value,
        email: document.getElementById("email").value,
-       areaAtuacao: document.getElementById("areaAtuacao").value,
-       situacaoOrganizacao: document.getElementById("situacaoOrganizacao").value
+       areaAtuacao: document.getElementById("area_atuacao").value,
+       situacaoOrganizacao: document.getElementById("situacao_organizacao").value
+    };
+
+    if (indiceEdicao == -1) {
+        lista.push(organizacao);
+    } else {
+        lista[indiceEdicao] = organizacao;
+        indiceEdicao = -1; 
     }
 
-    lista.push(organizacao);
     localStorage.setItem("listaOrganizacao", JSON.stringify(lista));
 
+    limparCampos();
+    mostrar();
+}
+
+function limparCampos() {
+    document.getElementById("nome").value = "";
+    document.getElementById("tipo_organizacao").value = "";
+    document.getElementById("telefone").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("area_atuacao").value = "";
+    document.getElementById("situacao_organizacao").value = "";
+}
+
+function editar(i){
+    let lista = JSON.parse(localStorage.getItem("listaOrganizacao"));
+
+    document.getElementById("nome").value = lista[i].nome;
+    document.getElementById("tipo_organizacao").value = lista[i].tipoOrganizacao;
+    document.getElementById("telefone").value = lista[i].telefone;
+    document.getElementById("email").value = lista[i].email;
+    document.getElementById("area_atuacao").value = lista[i].areaAtuacao;
+    document.getElementById("situacao_organizacao").value = lista[i].situacaoOrganizacao;
+
+    indiceEdicao = i; 
+}
+
+function excluir(i){
+    let lista = JSON.parse(localStorage.getItem("listaOrganizacao"));
+    lista.splice(i, 1);
+    localStorage.setItem("listaOrganizacao", JSON.stringify(lista));
     mostrar();
 }
 
@@ -38,69 +76,26 @@ function mostrar(){
     texto += "<th>Ações</th>";
     texto += "</tr>";
 
-for(let i = 0; i < lista.length; i++){
-    texto += "<td>" + lista[i].nome + "</td>";
-    texto += "<td>" + lista[i].tipoOrganizacao + "</td>";
-    texto += "<td>" + lista[i].telefone + "</td>";
-    texto += "<td>" + lista[i].email + "</td>";
-    texto += "<td>" + lista[i].areaAtuacao + "</td>";
-    texto += "<td>" + lista[i].situacaoOrganizacao + "</td>";
+    for(let i = 0; i < lista.length; i++){
+        texto += "<tr>";
+        
+        texto += "<td>" + lista[i].nome + "</td>";
+        texto += "<td>" + lista[i].tipoOrganizacao + "</td>";
+        texto += "<td>" + lista[i].telefone + "</td>";
+        texto += "<td>" + lista[i].email + "</td>";
+        texto += "<td>" + lista[i].areaAtuacao + "</td>";
+        texto += "<td>" + lista[i].situacaoOrganizacao + "</td>";
 
-    texto += "<td>";
-    texto += "<button onclick='editar("+ i +")'>Alterar</button>";
-    texto += "<button onclick='excluir("+ i +")'>Excluir</button>";
-    texto += "</td>";
+        texto += "<td>";
+        texto += "<button onclick='editar("+ i +")'>Alterar</button>";
+        texto += "<button onclick='excluir("+ i +")'>Excluir</button>";
+        texto += "</td>";
 
-    texto += "</tr>";
+        texto += "</tr>";
+    }
+
+    texto += "</table>";
+    document.getElementById("lista").innerHTML = texto;
 }
 
-texto += "</table>";
-
-document.getElementById("lista").innerHTML = texto;
-}
-
-mostrar()
-
-function editar(i){
-    let lista = JSON.parse(localStorage.getItem("listaOrganizacao"));
-
-    document.getElementById("nome").value = lista[i].nome;
-    document.getElementById("tipo_organizacao").value = lista[i].tipoOrganizacao;
-    document.getElementById("telefone").value = lista[i].telefone;
-    document.getElementById("email").value = lista[i].email;
-    document.getElementById("area_atuacao").value = lista[i].areaAtuacao;
-    document.getElementById("situacao_organizacao").value = lista[i].situacaoOrganizacao;
-
-    document.querySelector("button[onclick='salvar()']").onclick = function() { alterar(i); };
-}
-
-function alterar(i){
-    let lista = JSON.parse(localStorage.getItem("listaOrganizacao"));
-
-    let organizacao = {
-       nome: document.getElementById("nome").value,
-       tipoOrganizacao: document.getElementById("tipo_organizacao").value,
-       telefone: document.getElementById("telefone").value,
-       email: document.getElementById("email").value,
-       areaAtuacao: document.getElementById("area_atuacao").value,
-       situacaoOrganizacao: document.getElementById("situacao_organizacao").value
-    };
-
-    lista[i] = organizacao;
-
-    localStorage.setItem("listaOrganizacao", JSON.stringify(lista));
-
-    document.querySelector("button").onclick = salvar;
-
-    mostrar();
-}
-
-function excluir(i){
-    let lista = JSON.parse(localStorage.getItem("listaOrganizacao"));
-
-    lista.splice(i, 1);
-
-    localStorage.setItem("listaOrganizacao", JSON.stringify(lista));
-
-    mostrar();
-}
+mostrar();
