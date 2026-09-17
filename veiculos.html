@@ -21,25 +21,37 @@
       </nav>
     </header>
 
-    <h1>Cadastro de veículos</h1>
-    <input type="text" id="identificacao" placeholder="identificação (placa)" />
-    <input type="number" id="capacidade" placeholder="capacidade (kg)" />
-    <input type="text" id="tipo_veiculo" placeholder="tipo de veículo" />
+    <main class="page">
+      <h1>Cadastro de veículos</h1>
 
-    <select id="id_organizacao">
-      <option value="1">Cooperativa Central</option>
-      <option value="2">EcoTrack</option>
-    </select>
+      <div class="crud-layout">
+        <div class="form-card">
+          <div class="form-card__header">Novo veículo</div>
+          <div class="form-card__body">
+            <input type="text" id="identificacao" placeholder="identificação (placa)" />
+            <input type="number" id="capacidade" placeholder="capacidade (kg)" />
+            <input type="text" id="tipo_veiculo" placeholder="tipo de veículo" />
 
-    """"""""
-    <select id="situacao_veiculo">
-      <option value="Disponível">Disponivel</option>
-      <option value="Em rota">Em rota</option>
-      <option value="Manutencao">Manutenção</option>
-    </select>
-    <button type="button" onclick="salvar()">salvar</button>
+            <select id="id_organizacao">
+              <option value="1">Cooperativa Central</option>
+              <option value="2">EcoTrack</option>
+            </select>
 
-    <div id="lista"></div>
+            <select id="situacao_veiculo">
+              <option value="Disponível">Disponivel</option>
+              <option value="Em rota">Em rota</option>
+              <option value="Manutencao">Manutenção</option>
+            </select>
+
+            <button type="button" class="btn-primary" onclick="salvar()">Salvar</button>
+          </div>
+        </div>
+
+        <div class="list-card">
+          <div id="lista"></div>
+        </div>
+      </div>
+    </main>
 
     <script src="veiculos.js"></script>
   </body>

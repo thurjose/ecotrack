@@ -118,3 +118,151 @@ h1 {
   color: #444;
   margin: 0;
 }
+
+/* CRUD pages (Usuários, Organizações, Veículos, Atendimento, Tipo de Resíduo) */
+
+.page {
+  padding: 32px 40px;
+}
+
+.page h1 {
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.crud-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.form-card {
+  width: 320px;
+  background: white;
+  border: 1px solid #1f4d2c;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.form-card__header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #1f4d2c;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1f4d2c;
+}
+
+.form-card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-card__body label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #4b5142;
+}
+
+.form-card__body input,
+.form-card__body select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #99a08c;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.form-card__body input[type="checkbox"] {
+  width: auto;
+}
+
+.form-card__body label:has(input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  margin-top: 4px;
+  padding: 9px 0;
+  background: #398636;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #2f6e2c;
+}
+
+.list-card {
+  flex: 1;
+  min-width: 560px;
+  background: white;
+  border: 1px solid #1f4d2c;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.list-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.list-card th {
+  background: #1f4d2c;
+  color: #fff;
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.list-card td {
+  padding: 11px 14px;
+  border-bottom: 1px solid #d8dccf;
+  color: #333;
+}
+
+.list-card tr:last-child td {
+  border-bottom: none;
+}
+
+.list-card tr:nth-child(even) td {
+  background: #f7f6ee;
+}
+
+.list-card button {
+  padding: 5px 10px;
+  margin-right: 6px;
+  border: 1px solid #99a08c;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.list-card button:hover {
+  border-color: #1f4d2c;
+  color: #1f4d2c;
+}
+
+.list-card p {
+  padding: 16px;
+  color: #6b7264;
+  font-size: 14px;
+}

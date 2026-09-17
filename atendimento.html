@@ -21,59 +21,59 @@
       </nav>
     </header>
 
-    <h1>Atendimentos</h1>
+    <main class="page">
+      <h1>Atendimentos</h1>
 
-    <form id="form-atendimento">
-      <input type="hidden" id="campo-id-editando" />
+      <div class="crud-layout">
+        <form id="form-atendimento" class="form-card">
+          <div class="form-card__header">Novo atendimento</div>
+          <div class="form-card__body">
+            <input type="hidden" id="campo-id-editando" />
 
-      <label
-        >ID Organização:
-        <input type="number" id="campo-id-organizacao" required />
-      </label>
-      <br />
+            <label>
+              ID Organização:
+              <input type="number" id="campo-id-organizacao" required />
+            </label>
 
-      <label
-        >ID Ocorrência:
-        <input type="number" id="campo-id-ocorrencia" required />
-      </label>
-      <br />
+            <label>
+              ID Ocorrência:
+              <input type="number" id="campo-id-ocorrencia" required />
+            </label>
 
-      <label
-        >ID Veículo:
-        <input type="number" id="campo-id-veiculo" required />
-      </label>
-      <br />
+            <label>
+              ID Veículo:
+              <input type="number" id="campo-id-veiculo" required />
+            </label>
 
-      <label
-        >Data de aceite:
-        <input type="datetime-local" id="campo-data-aceite" />
-      </label>
-      <br />
+            <label>
+              Data de aceite:
+              <input type="datetime-local" id="campo-data-aceite" />
+            </label>
 
-      <label
-        >Data de início:
-        <input type="datetime-local" id="campo-data-inicio" />
-      </label>
-      <br />
+            <label>
+              Data de início:
+              <input type="datetime-local" id="campo-data-inicio" />
+            </label>
 
-      <label
-        >Data de conclusão:
-        <input type="datetime-local" id="campo-data-conclusao" />
-      </label>
-      <br />
+            <label>
+              Data de conclusão:
+              <input type="datetime-local" id="campo-data-conclusao" />
+            </label>
 
-      <label
-        >Resultado do atendimento:
-        <input type="text" id="campo-resultado" maxlength="30" />
-      </label>
-      <br />
+            <label>
+              Resultado do atendimento:
+              <input type="text" id="campo-resultado" maxlength="30" />
+            </label>
 
-      <button type="submit">Salvar</button>
-    </form>
+            <button type="submit" class="btn-primary">Salvar</button>
+          </div>
+        </form>
 
-    <hr />
-
-    <div id="area-lista"></div>
+        <div class="list-card">
+          <div id="area-lista"></div>
+        </div>
+      </div>
+    </main>
 
     <script src="main.js"></script>
   </body>

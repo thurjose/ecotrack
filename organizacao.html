@@ -23,37 +23,47 @@
       </nav>
     </header>
 
-    <h1>Organizações</h1>
+    <main class="page">
+      <h1>Organizações</h1>
 
-    <input type="text" id="nome" placeholder="Nome da Organização" />
-    <select id="tipoOrganizacao">
-      <option value="" disabled selected hidden>Tipo de Organização</option>
-      <option value="cooperativa">Cooperativa</option>
-      <option value="empresaColeta">Empresa de Coleta</option>
-      <option value="servicoMunicipal">Serviço Municipal</option>
-      <option value="coletorParceiro">Coletor Parceiro</option>
-      <option value="ong">ONG</option>
-    </select>
+      <div class="crud-layout">
+        <div class="form-card">
+          <div class="form-card__header">Nova organização</div>
+          <div class="form-card__body">
+            <input type="text" id="nome" placeholder="Nome da Organização" />
+            <select id="tipoOrganizacao">
+              <option value="" disabled selected hidden>Tipo de Organização</option>
+              <option value="cooperativa">Cooperativa</option>
+              <option value="empresaColeta">Empresa de Coleta</option>
+              <option value="servicoMunicipal">Serviço Municipal</option>
+              <option value="coletorParceiro">Coletor Parceiro</option>
+              <option value="ong">ONG</option>
+            </select>
 
-    <input type="tel" id="telefone" placeholder="(99) 99999-9999" />
+            <input type="tel" id="telefone" placeholder="(99) 99999-9999" />
 
-    <input type="email" id="email" placeholder="E-mail da Organização" />
+            <input type="email" id="email" placeholder="E-mail da Organização" />
 
-    <input type="text" id="areaAtuacao" placeholder="Área de atuação" />
+            <input type="text" id="areaAtuacao" placeholder="Área de atuação" />
 
-    <select id="situacaoOrganizacao">
-      <option value="" disabled selected hidden>Situação da Organização</option>
-      <option value="ativa">Ativa</option>
-      <option value="inativa">Inativa</option>
-      <option value="suspensa">Suspensa</option>
-    </select>
+            <select id="situacaoOrganizacao">
+              <option value="" disabled selected hidden>Situação da Organização</option>
+              <option value="ativa">Ativa</option>
+              <option value="inativa">Inativa</option>
+              <option value="suspensa">Suspensa</option>
+            </select>
 
-    <button type="button" onclick="salvar()">Salvar</button>
-    <span id="msg"></span>
+            <button type="button" class="btn-primary" onclick="salvar()">Salvar</button>
+            <span id="msg"></span>
+          </div>
+        </div>
 
-    <div id="lista"></div>
+        <div class="list-card">
+          <div id="lista"></div>
+        </div>
+      </div>
+    </main>
 
-    <script src="organizacao.js
-    "></script>
+    <script src="organizacao.js"></script>
   </body>
 </html>
