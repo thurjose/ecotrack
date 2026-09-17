@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Usuários</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   </head>
   <body>
     <header class="head">
@@ -20,24 +21,35 @@
       </nav>
     </header>
 
-    <h1>Usuários</h1>
+    <main class="page">
+      <h1>Usuários</h1>
 
-    <input type="text" id="nome" placeholder="Nome" />
-    <input type="text" id="email" placeholder="E-mail" />
-    <input type="text" id="telefone" placeholder="Telefone" />
-    <select id="tipo">
-      <option value="cidadao">Cidadão</option>
-      <option value="organizacao">Organização</option>
-    </select>
-    <select id="situacao">
-      <option value="ativa">Ativa</option>
-      <option value="inativa">Inativa</option>
-    </select>
+      <div class="crud-layout">
+        <div class="form-card">
+          <div class="form-card__header">Novo usuário</div>
+          <div class="form-card__body">
+            <input type="text" id="nome" placeholder="Nome" />
+            <input type="text" id="email" placeholder="E-mail" />
+            <input type="text" id="telefone" placeholder="Telefone" />
+            <select id="tipo">
+              <option value="cidadao">Cidadão</option>
+              <option value="organizacao">Organização</option>
+            </select>
+            <select id="situacao">
+              <option value="ativa">Ativa</option>
+              <option value="inativa">Inativa</option>
+            </select>
 
-    <button type="button" onclick="salvar()">Salvar</button>
-    <span id="msg"></span>
+            <button type="button" class="btn-primary" onclick="salvar()">Salvar</button>
+            <span id="msg"></span>
+          </div>
+        </div>
 
-    <div id="lista"></div>
+        <div class="list-card">
+          <div id="lista"></div>
+        </div>
+      </div>
+    </main>
 
     <script src="usuario.js"></script>
   </body>

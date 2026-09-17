@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tipo de residuos</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   </head>
   <body>
     <header class="head">
@@ -21,20 +22,39 @@
       </nav>
     </header>
 
-    <h1>Tipo de resíduo</h1>
-    <form id="form-residuo">
-      <h3>Novo tipo de resíduo:</h3>
-      <input type="hidden" id="campo-id-editando" />
-      <p>Nome (até 50 caracteres)</p>
-      <input type="text" id="campo-nome" maxlength="50" />
-      <p>É reciclável</p>
-      <input type="checkbox" id="campo-reciclavel" />
-      <p>É perigoso</p>
-      <input type="checkbox" id="campo-perigoso" />
-      <button>Adicionar</button>
-    </form>
+    <main class="page">
+      <h1>Tipo de resíduo</h1>
 
-    <div id="area-lista"></div>
+      <div class="crud-layout">
+        <form id="form-residuo" class="form-card">
+          <div class="form-card__header">Novo tipo de resíduo</div>
+          <div class="form-card__body">
+            <input type="hidden" id="campo-id-editando" />
+
+            <label>
+              Nome (até 50 caracteres)
+              <input type="text" id="campo-nome" maxlength="50" />
+            </label>
+
+            <label>
+              <input type="checkbox" id="campo-reciclavel" />
+              É reciclável
+            </label>
+
+            <label>
+              <input type="checkbox" id="campo-perigoso" />
+              É perigoso
+            </label>
+
+            <button type="submit" class="btn-primary">Adicionar</button>
+          </div>
+        </form>
+
+        <div class="list-card">
+          <div id="area-lista"></div>
+        </div>
+      </div>
+    </main>
 
     <script src="tiporesiduos.js"></script>
   </body>
